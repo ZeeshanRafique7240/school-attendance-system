@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "904038220377",
+    "project_id": "attendesysapps",
+    "storage_bucket": "attendesysapps.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:904038220377:android:68b79d97fa56acc1d52748",
+        "android_client_info": {
+          "package_name": "com.example.attendacesystemapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "904038220377-lgk962ckk9bbtrr8sm5k48v23lld9ola.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.attendacesystemapp",
+            "certificate_hash": "19c5ec762dd1b9f8f938c9dd751118c3a45e2169"
+          }
+        },
+        {
+          "client_id": "904038220377-22ca72akqrttd00ulqurdq8843vm4jgn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBAtzqajfsrPkx9YwmuYzoouzFa42-zQyM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "904038220377-22ca72akqrttd00ulqurdq8843vm4jgn.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
