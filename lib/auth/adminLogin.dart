@@ -1,9 +1,10 @@
 // ignore_for_file: prefer_const_constructors, sort_child_properties_last
 
 import 'package:attendacesystemapp/auth/adminRegistration.dart';
-import 'package:attendacesystemapp/auth/studentRegistration.dart';
+
 import 'package:attendacesystemapp/auth/studentforgetpass.dart';
-import 'package:attendacesystemapp/screen/admindashbord.dart';
+
+import 'package:attendacesystemapp/screen/student_record.dart';
 
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -36,7 +37,7 @@ class _AdminLoginState extends State<AdminLogin> {
       await Storage.write(key: "uid", value: userCredential.user?.uid);
       // ignore: use_build_context_synchronously
       Navigator.pushReplacement(
-          context, MaterialPageRoute(builder: (context) => Admin_Dashbord()));
+          context, MaterialPageRoute(builder: (context) => Student_Record()));
     } on FirebaseAuthException catch (e) {
       if (e.code == 'user-not-found') {
         //print("No user found for this email");

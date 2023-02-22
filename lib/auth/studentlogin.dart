@@ -1,9 +1,9 @@
-// ignore_for_file: prefer_const_constructors, sort_child_properties_last
+// ignore_for_file: prefer_const_constructors, sort_child_properties_last, use_build_context_synchronously
 
 import 'package:attendacesystemapp/auth/studentRegistration.dart';
 import 'package:attendacesystemapp/auth/studentforgetpass.dart';
-
-import 'package:attendacesystemapp/screen/studentdetail.dart';
+import 'package:attendacesystemapp/screen/student_info.dart';
+import 'package:attendacesystemapp/screen/tabbar.dart';
 
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -18,6 +18,7 @@ class StudentLogin extends StatefulWidget {
 
 class _StudentLoginState extends State<StudentLogin> {
   final _formkey = GlobalKey<FormState>();
+  final user = FirebaseAuth.instance.currentUser;
 
   var email = "";
   var passowrd = "";
@@ -31,11 +32,11 @@ class _StudentLoginState extends State<StudentLogin> {
     try {
       UserCredential userCredential = await FirebaseAuth.instance
           .signInWithEmailAndPassword(email: email, password: passowrd);
-      //print(userCredential.user?.uid);
 
       await Storage.write(key: "uid", value: userCredential.user?.uid);
+      Navigator.popUntil(context, (route) => route.isFirst);
       Navigator.pushReplacement(
-          context, MaterialPageRoute(builder: (context) => Student_Detail()));
+          context, MaterialPageRoute(builder: (context) => HomeScreen()));
     } on FirebaseAuthException catch (e) {
       if (e.code == 'user-not-found') {
         //print("No user found for this email");
